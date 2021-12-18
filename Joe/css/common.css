@@ -1,4 +1,17 @@
 @charset "utf-8";
+#nav ul { background-image:url(../images/buttonBanner.jpg); list-style:none; line-height: 0; margin: 0 0 0em 0; padding: 0px; text-align: center; }
+#nav ul li {display:inline-block; font-family: Arial, Helvetica, sans-serif; margin: 0; text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.75);}
+#nav ul li a { color: #ffffff; float: left; text-decoration:none; font-size: 16px; line-height: 45px; padding: 0px 22px 2px; }
+#nav ul li:hover a { background: #600101; color: #fff; text-decoration: none; text-shadow: none;}
+#nav ul li ul { text-align: left; padding: 0px; width: 290px; }
+#nav ul li ul li { clear:both; display: list-item; margin: 0; padding-bottom: 0;}
+#nav ul li ul li a { display: block; float: none; font-size: 14px; line-height: 2.5em; margin: 0 0 0px 0; padding: 0px 5px; }
+#nav ul li:hover ul li a { background-color:#7e0000; color: #fff; }
+#nav ul li ul li a:hover { background: #000; color: #fff; text-decoration: none; text-shadow: none; }
+#nav ul li ul {left: 0px; top: 47px; z-index: 15; line-height: 30px;}
+#nav ul li {position: relative;}
+#nav ul li ul {background-color:#d6dce9; position: absolute; display: none;}
+#nav ul li:hover ul {display: block;}
 body {
 	background-color: #666;
 	background-image: url(../images/background.jpg);
@@ -9,9 +22,6 @@ img {
   border: 0;
   width: 100%;
   width: -webkit-fill-available;
-}
-img.banner {
-  width: 100%;
 }
 td span,
 td a.center {
