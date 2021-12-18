@@ -1,0 +1,102 @@
+@charset "utf-8";
+body {
+	background-color: #666;
+	background-image: url(../images/background.jpg);
+	font-family: Arial, Helvetica, sans-serif;	
+	font-size: 14px;
+}
+img {
+  border: 0;
+  width: 100%;
+  width: -webkit-fill-available;
+}
+img.banner {
+  width: 100%;
+}
+td span,
+td a.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.background {
+  background-color: white;
+  height: 100%;
+}
+.center {
+  text-align: center;
+}
+.content {
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: normal;
+  padding: 10px;
+  padding-left: 12px;
+  text-align: left;
+ }
+.contentBox {
+  background-color: #f2f2f2;
+  border: thin solid #e2e2e2;
+  height: auto;
+  margin: 3px;
+  padding: 3px;
+  width: 98%;
+}
+.contentBox2 {
+  background-color: #efefef;
+  border: thin solid #ffff;
+  font-size: 12px;
+  padding: 5px;
+  vertical-align: top;
+}
+.default {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+.footer {
+  color: #333;
+  font-size: 9px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-align: center;
+}
+td.spacer {
+  width: 1%;
+}
+td.spacer13 {
+  width: 13%;
+}
+.mainFont2 {
+  color: #333;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  text-align: left;
+}
+.mainFont4 {
+  color: #111;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: left;
+}
+.pageSubTitle {
+  color: #600101;
+  font-size: 22px;
+  font-weight: bold;
+}
+.pageTitle {
+  color: #600101;
+  font-size: 16px;
+  font-weight: bold;
+}
