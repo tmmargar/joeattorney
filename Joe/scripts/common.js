@@ -1,35 +1,72 @@
+window.onload = function() {
+  buildNavigation();
+  buildFooter();
+}
 function buildFooter() {
-  const val = "<a href=\"index.html\">Home</a> | <a href=\"aboutUs.html\">About Us</a> | <a href=\"whyChoose.html\">Why Choose JPV</a> | <a href=\"consultServices.html\">Consulting Services</a> | <a href=\"legalServices.html\">Legal Services</a> | <a href=\"disclaimer.html\">Disclaimer</a> | <a href=\"contactUs.html\">Contact Us</a><br /><br />All Content &copy;2021</td>";
-  return val;
+  const aryHref = ["index.html", "aboutUs.html", "whyChoose.html", "consultServices.html", "legalServices.html", "disclaimer.html", "contactUs.html"];
+  const aryText = ["Home", "About Us", "Why Choose JPV", "Consulting Services", "Legal Services", "Disclaimer", "Contact Us"];
+  let linkPrevious;
+  for (let index = 0; index < aryHref.length; index++) {
+    const link = document.createElement("a");
+    link.href = aryHref[index];
+    link.innerText = aryText[index];
+    if (0 == index) {
+      document.getElementById("footer").appendChild(link);
+    } else {
+      // after not supported by IE
+      const separator = document.createTextNode(" | ");
+      linkPrevious.parentNode.insertBefore(separator, null);
+      linkPrevious.parentNode.insertBefore(link, null);
+    }
+    linkPrevious = link;
+  }
+  const breakTag = document.createElement("br");
+  const breakTag2 = document.createElement("br");
+  const copyTag = document.createElement("span");
+  copyTag.innerHTML = "All Content &copy; 2021";
+  // after not supported by IE
+  linkPrevious.parentNode.insertBefore(breakTag, null);
+  linkPrevious.parentNode.insertBefore(breakTag2, null);
+  linkPrevious.parentNode.insertBefore(copyTag, null);
 }
 function buildNavigation() {
-  const val = 
-    " <ul>\r\n" +
-    "  <li><a href=\"index.html\">Home</a></li>\r\n" +
-    "  <li><a href=\"aboutUs.html\">About Us</a></li>\r\n" +
-    "  <li><a href=\"whyChoose.html\">Why Choose JPV</a></li>\r\n" +
-    "  <li><a href=\"consultServices.html\">Consulting Services</a>\r\n" +
-    "   <ul>\r\n" +
-    "    <li><a href=\"consultServices_revenueEnhance.html\">Revenue Enhancements</a></li>\r\n" +
-    "    <li><a href=\"consultServices_denials.html\">Denials Reductions &amp; Commercial Litigation</a></li>\r\n" +
-    "    <li><a href=\"consultServices_interimMgt.html\">Interim Management Support</a></li>\r\n" +
-    "    <li><a href=\"consultServices_measurement.html\">Measurement</a></li>\r\n" +
-    "    <li><a href=\"consultServices_efficiency.html\">Efficiency Improvement</a></li>\r\n" +
-    "    <li><a href=\"consultServices_seminars.html\">Seminars, Education, Retraining</a></li>\r\n" +
-    "   </ul>\r\n" +
-    "  </li>\r\n" +
-    "  <li><a href=\"legalServices.html\">Legal Services</a>\r\n" +
-    "   <ul>\r\n" +
-    "    <li><a href=\"legalServices_injury.html\">Injury Litigation</a></li>\r\n" +
-    "    <li><a href=\"legalServices_acctReceiv.html\">Account Receivable Collections</a></li>\r\n" +
-    "    <li><a href=\"legalServices_contractClaims.html\">Contract Claims</a></li>\r\n" +
-    "    <li><a href=\"legalServices_immigration.html\">Immigration</a></li>\r\n" +
-    "    <li><a href=\"legalServices_other.html\">Other Legal Claims Handled</a></li>\r\n" +
-    "   </ul>\r\n" +
-    "  </li>\r\n" +
-    "  <li><a href=\"disclaimer.html\">Disclaimer</a></li>\r\n" +
-    "  <li><a href=\"contactUs.html\">Contact Us</a></li>\r\n" +
-    " </ul>\r\n" +
-    "</div>";
-  return val;
+  const aryHref = ["index.html", "aboutUs.html", "whyChoose.html", "consultServices.html", "legalServices.html", "disclaimer.html", "contactUs.html"];
+  const aryText = ["Home", "About Us", "Why Choose JPV", "Consulting Services", "Legal Services", "Disclaimer", "Contact Us"];
+  const aryHref2 = ["consultServices_revenueEnhance.html", "consultServices_denials.html", "consultServices_interimMgt.html", "consultServices_measurement.html", "consultServices_efficiency.html", "consultServices_seminars.html"];
+  const aryText2 = ["Revenue Enhancements", "Denials Reductions & Commercial Litigation", "Interim Management Support", "Measurement", "Efficiency Improvement", "Seminars, Education, Retraining"];
+  const aryHref3 = ["legalServices_injury.html", "legalServices_acctReceiv.html", "legalServices_contractClaims.html", "legalServices_immigration.html", "legalServices_other.html"];
+  const aryText3 = ["Injury Litigation", "Account Receivable Collections", "Contract Claims", "Immigration", "Other Legal Claims Handled"];
+  const ulRoot = document.createElement("ul");
+  document.getElementById("nav").appendChild(ulRoot);
+  for (let index = 0; index < aryHref.length; index++) {
+    const liRoot = document.createElement("li");
+    ulRoot.appendChild(liRoot);
+    const link = document.createElement("a");
+    link.href = aryHref[index];
+    link.innerText = aryText[index];
+    liRoot.appendChild(link);
+    if (3 == index) {
+      const ulRoot2 = document.createElement("ul");
+      liRoot.appendChild(ulRoot2);
+      for (let index2 = 0; index2 < aryHref2.length; index2++) {
+        const liRoot2 = document.createElement("li");
+        ulRoot2.appendChild(liRoot2);
+        const link2 = document.createElement("a");
+        link2.href = aryHref2[index2];
+        link2.innerText = aryText2[index2];
+        liRoot2.appendChild(link2);
+      }
+    } else if (4 == index) {
+      const ulRoot3 = document.createElement("ul");
+      liRoot.appendChild(ulRoot3);
+      for (let index3 = 0; index3 < aryHref3.length; index3++) {
+        const liRoot3 = document.createElement("li");
+        ulRoot3.appendChild(liRoot3);
+        const link3 = document.createElement("a");
+        link3.href = aryHref3[index3];
+        link3.innerText = aryText3[index3];
+        liRoot3.appendChild(link3);
+      }
+    }
+  }
 }
