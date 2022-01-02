@@ -1,4 +1,5 @@
 window.onload = function() {
+  buildHead();
   buildNavigation();
   buildFooter();
 }
@@ -28,6 +29,44 @@ function buildFooter() {
   linkPrevious.parentNode.insertBefore(breakTag, null);
   linkPrevious.parentNode.insertBefore(breakTag2, null);
   linkPrevious.parentNode.insertBefore(copyTag, null);
+}
+function buildHead() {
+ //<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ const metaContent = document.createElement("meta");
+ metaContent.httpEquiv ="Content-Type";
+ metaContent.content = "text/html; charset=UTF-8";
+ //document.head.appendChild(metaContent);
+ document.head.insertBefore(metaContent, document.getElementsByTagName("title").item(0));
+  /*<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+ <link href="images/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
+ <link href="images/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
+ <link href="images/site.webmanifest" rel="manifest">*/
+ const metaView = document.createElement("meta");
+ metaView.name = "viewport";
+ metaView.content = "width=device-width, initial-scale=1";
+ //document.head.appendChild(metaView);
+ document.head.insertBefore(metaView, document.getElementsByTagName("title").item(0));
+ const linkApple = document.createElement("link");
+ linkApple.href = href="images/apple-touch-icon.png";
+ linkApple.rel = "apple-touch-icon";
+ linkApple.sizes = "180x180";
+ document.head.insertBefore(linkApple, document.getElementsByTagName("title").item(0));
+ const linkFav32 = document.createElement("link");
+ linkFav32.href = href="images/favicon-32x32.png";
+ linkFav32.rel = "icon";
+ linkFav32.sizes = "32x32";
+ document.head.insertBefore(linkFav32, document.getElementsByTagName("title").item(0));
+ const linkFav16 = document.createElement("link");
+ linkFav16.href = href="images/favicon-16x16.png";
+ linkFav16.rel = "icon";
+ linkFav16.sizes = "16x16";
+ document.head.insertBefore(linkFav16, document.getElementsByTagName("title").item(0));
+ const linkManifest = document.createElement("link");
+ linkManifest.href = href="images/site.webmanifest";
+ linkManifest.rel = "manifest";
+ document.head.insertBefore(linkManifest, document.getElementsByTagName("title").item(0));
 }
 function buildNavigation() {
   const aryHref = ["index.html", "aboutUs.html", "whyChoose.html", "consultServices.html", "legalServices.html", "disclaimer.html", "contactUs.html"];
